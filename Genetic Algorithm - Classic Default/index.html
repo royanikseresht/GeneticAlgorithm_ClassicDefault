@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+    
+  </head>
+  <body>
+      
+    <!-- p5mimicry -->
+    <!-- <script src="http://localhost:8080/p5mimicry.js"></script> -->
+    <script src="https://unpkg.com/p5mimicry@latest/dist/p5mimicry.min.js"></script>
+    <script>
+    let mover;
+    function setup(){
+        createCanvas(480, 360);
+        mover = new p5mimicry.Mover(width/2, height/2, 40);
+    }
+    function draw(){
+        background(220);
+        const target = createVector(mouseX, mouseY);
+        mover.seek(target);
+        mover.update();
+        mover.display();
+    }
+    </script>
+  </body>
+</html>
